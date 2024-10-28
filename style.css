@@ -1,0 +1,171 @@
+:root{
+    --Soft-blue: hsl(215, 51%, 70%);
+    --Cyan: hsl(178, 100%, 50%);
+    --Very-dark-blue1: hsl(217, 54%, 11%);
+    --Very-dark-blue2: hsl(216, 50%, 16%);
+    --Very-dark-blue3: hsl(215, 32%, 27%);
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: 0;
+}
+
+body{
+    font-size: 18px;
+    font-family: 'Outfit', serif;
+    background-color: var(--Very-dark-blue1);
+    min-height: 100vh;
+    display: grid;
+    place-content: center;
+}
+
+#card{
+    background-color: var(--Very-dark-blue2);  
+    max-width: 300px;
+    text-align: left;
+    margin-top: 1rem;
+    padding: 1.4em;
+    border-radius: 10px;
+}
+
+#card .img-equilibrium{
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+
+}
+
+#card .img-container{
+    position: relative;
+    width: 300px;
+    height: 300px;
+}
+
+#card .img-container::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--Cyan);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+}
+
+#card .img-container:hover::before{
+    opacity: 0.5;
+}
+
+#card .img-container::after{
+    content: url(images/icon-view.svg);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#card .img-container:hover::after{
+    opacity: 1;
+}
+
+#card .card-content{
+    padding-top: 1.5em;
+}
+
+#card .card-content h1{
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+#card .card-content h1:hover{
+    color: var(--Cyan);
+    cursor: pointer;
+}
+
+#card .card-content .paragraphe1{
+    padding-top: 1em;
+    color: var(--Soft-blue);
+    line-height: 1.5;
+    font-size: 16px;
+}
+
+.container1{
+    padding-top: 1.2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1em;
+    border-bottom: 1px solid var(--Very-dark-blue3);
+}
+
+.container1 .paragraphe2{
+    color: var(--Cyan);
+    display: flex;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.container1 .paragraphe2::before{
+    content: "";
+    background: url("./images/icon-ethereum.svg");
+    width: 11px;
+    height: 18px;
+    margin-right: 10px;
+    font-weight: 400;
+}
+
+.container1 .paragraphe3{
+    display: flex;
+    align-items: center;
+    color: var(--Soft-blue);
+    font-size: 16px;
+}
+
+.container1 .paragraphe3::before{
+    content: "";
+    background: url("images/icon-clock.svg");
+    width: 17px;
+    height: 17px;
+    margin-right: 10px;
+}
+
+.container2{
+    padding-top: 1em;
+    display: flex;
+    align-items: center;
+}
+
+.container2 img{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    margin-right: 10px;
+}
+
+.container2 .author{
+    color: var(--Soft-blue);
+    font-size: 14px;
+}
+
+.container2 .name{
+    color: #fff;
+}
+
+.container2 .name:hover{
+    color: var(--Cyan);
+    cursor: pointer;
+}
+
+@media (max-width: 375px) {
+    #card{
+        margin: 5rem;
+    }
+}
